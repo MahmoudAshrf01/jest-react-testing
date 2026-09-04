@@ -8,6 +8,7 @@ const config = {
   transform: {
     ...tsJestTransformCfg,
   },
+  setupFilesAfterEnv: ['./jest.setup.ts']
 };
 
 export default config;
