@@ -15,12 +15,12 @@ describe("initialized with defaultCount=0 and desciption='testing the counter lo
     });
     
     it("defaultCount=0, and + clicked then counter = 1", () => {
-        fireEvent.click(screen.getByRole("button", {name: "+"}));
+        fireEvent.click(screen.getByRole("button", {name: "add to counter"}));
         expect(screen.getByText("Current Count: 1")).toBeInTheDocument();
     });
     
     it("defaultCount=0, and - clicked then counter = -1", () => {
-        fireEvent.click(screen.getByRole("button", {name: "-"}));
+        fireEvent.click(screen.getByRole("button", {name: "subtract from counter"}));
         expect(screen.getByText("Current Count: -1")).toBeInTheDocument();
     });
 })

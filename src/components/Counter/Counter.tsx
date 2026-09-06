@@ -15,9 +15,9 @@ export default function Counter({ description, defaultCount}: CounterProps){
                 DESC: {description} - DC: {defaultCount}
             </h2>
 
-            <button name="-" onClick={() => setCount(count - 1)}>-</button>
+            <button aria-label="subtract from counter" name="-" onClick={() => setCount(count - 1)}>-</button>
             <p>Current Count: {count} </p>
-            <button name="+" onClick={() => setCount(count + 1)}>+</button>
+            <button aria-label="add to counter" name="+" onClick={() => setCount(count + 1)}>+</button>
         </div>
     )
 }
