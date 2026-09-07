@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import user from "@testing-library/user-event";
 import Counter from "./Counter";
 
 describe("initialized with defaultCount=0 and desciption='testing the counter logic'", () => {
@@ -23,5 +24,15 @@ describe("initialized with defaultCount=0 and desciption='testing the counter lo
         fireEvent.click(screen.getByRole("button", {name: "subtract from counter"}));
         expect(screen.getByText("Current Count: -1")).toBeInTheDocument();
     });
+    
+    describe("when the Incrementor changes to 5 and  '+' button is  clicked", () => {
+        beforeEach(() => {
+            user.type(screen.getByLabelText(/Incrementor:/), "{selectall}5");
+            user.click(screen.getByRole("button", {name: "add to counter"}))
+        })
+    
+        it("renders 'Current Count: 0'", () => {
+          expect(screen.getByText("Current Count: 0")).toBeInTheDocument();
+        })
+    })
 })
-
